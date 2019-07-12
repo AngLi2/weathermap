@@ -39,6 +39,9 @@
                  close="restAlertModel.closeAlert($index)" ng-bind="alert.msg"
                  dismiss-on-timeout="5000"></div>
             <div class="input-group col-md-6 col-md-offset-3">
+                <select class="form-control" ng-model="searchModel.cityNameInput">
+                    <option value="">BEIJING</option>
+                </select>
                 <input type="text" class="form-control" placeholder="{{'yourCity'|translate}}" ng-model="searchModel.cityNameInput"
                        ng-keypress="($event.which === 13) ? searchModel.searchClickFn() : 0">
                 <span class="input-group-btn">
