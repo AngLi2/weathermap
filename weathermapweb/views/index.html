@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" ng-app="app">
+<html lang="zh-cn" ng-app="app" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>{{'weatherDemo'|translate}}</title>
@@ -39,11 +39,14 @@
                  close="restAlertModel.closeAlert($index)" ng-bind="alert.msg"
                  dismiss-on-timeout="5000"></div>
             <div class="input-group col-md-6 col-md-offset-3">
-                <select class="form-control" ng-model="searchModel.cityNameInput">
-                    <option value="">BEIJING</option>
-                </select>
-                <input type="text" class="form-control" placeholder="{{'yourCity'|translate}}" ng-model="searchModel.cityNameInput"
+
+                <input list="cities" class="form-control" placeholder="{{'yourCity'|translate}}" ng-model="searchModel.cityNameInput"
                        ng-keypress="($event.which === 13) ? searchModel.searchClickFn() : 0">
+                <datalist id="cities">
+                    <option value="WUHAN"></option>
+                    <option value="SHENZHEN"></option>
+                </datalist>
+
                 <span class="input-group-btn">
                     <button class="btn btn-primary" type="button" ng-click="searchModel.searchClickFn()">{{'search'|translate}}</button>
                 </span>
